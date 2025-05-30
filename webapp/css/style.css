@@ -1,0 +1,21 @@
+/* Styles for left-to-right (LTR) languages */
+.myAppDemoWT .myCustomButton.sapMBtn {
+  margin-right: 0.5rem;
+}
+
+.myAppDemoWT .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+  color: #d14900;
+  margin-top: 1rem;
+}
+
+/* Styles for right-to-left (RTL) languages */
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+  margin-right: 0.5rem;
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+}
