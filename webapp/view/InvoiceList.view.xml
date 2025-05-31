@@ -1,10 +1,20 @@
 <mvc:View
+  controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
 >
-  <List id="invoiceList" items="{invoices>/Invoices}" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin">
-    <items>
-      <ObjectListItem title="{invoices>Quantity} x {invoices>ProductName}"/>
+  <List id="invoiceList" items="{invoices>/Invoices}" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto">
+    <items class="sapUiResponsiveMargin">
+      <ObjectListItem title="{invoices>Quantity} x {invoices>ProductName}"
+        number="{parts: ['invoices>ExtendedPrice', 'view>/currency'],
+            type: 'sap.ui.model.type.Currency',
+            formatOptions: {
+              showMeasure: false
+            }
+          }"
+        numberUnit="{view>/currency}"
+        numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Error' : 'Success'}"
+      />
     </items>  
   </List>
 </mvc:View>
