@@ -2,8 +2,10 @@
   controllerName="sap.ui.demo.walkthrough.controller.Detail"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
+  xmlns:control="sap.ui.demo.walkthrough.control"
 >
   <Page title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress="onNavBack">
       <ObjectHeader intro="{invoices>ShipperName}" title="{invoices>ProductName}" />
+    <control:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change="onRatingChange" />
   </Page>
 </mvc:View>
