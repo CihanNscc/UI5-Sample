@@ -4,8 +4,9 @@ sap.ui.define(
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/resource/ResourceModel",
     "./controller/HelloDialog",
+    "sap/ui/Device",
   ],
-  function (UIComponent, JSONModel, ResourceModel, HelloDialog) {
+  function (UIComponent, JSONModel, ResourceModel, HelloDialog, Device) {
     "use strict";
 
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
@@ -22,6 +23,10 @@ sap.ui.define(
           },
         });
         this.setModel(oModel);
+
+        var oDeviceModel = new JSONModel(Device);
+        oDeviceModel.setDefaultBindingMode("OneWay");
+        this.setModel(oDeviceModel, "device");
 
         var i18nModel = new ResourceModel({
           bundleName: "sap.ui.demo.walkthrough.i18n.i18n",

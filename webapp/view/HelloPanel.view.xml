@@ -3,10 +3,11 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
-    <Panel headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto">
+    <Panel headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto"
+        expandable="{device>/system/phone}" expanded="{= !${device>/system/phone} }">
         <content>
             <Button text="{i18n>openDialogButtonText}" icon="sap-icon://message-popup"
-                press="onOpenDialog" class="sapUiSmallMarginEnd" />
+                press="onOpenDialog" class="sapUiSmallMarginEnd sapUiVisibleOnDesktop" />
             <Button text="{i18n>showHelloButtonText}" press="onButtonPressed" class="myCustomButton" />
             <Input value="{/recipient/name}" description="Hello {/recipient/name}"
                 valueLiveUpdate="true" width="60%" />
