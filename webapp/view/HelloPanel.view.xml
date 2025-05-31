@@ -1,14 +1,17 @@
 <mvc:View
-  controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
+    controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
 >
     <Panel headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto">
         <content>
-            <Button text="{i18n>openDialogButtonText}" icon="sap-icon://message-popup" press="onOpenDialog" class="sapUiSmallMarginEnd" />
+            <Button text="{i18n>openDialogButtonText}" icon="sap-icon://message-popup"
+                press="onOpenDialog" class="sapUiSmallMarginEnd" />
             <Button text="{i18n>showHelloButtonText}" press="onButtonPressed" class="myCustomButton" />
-            <Input value="{/recipient/name}" description="Hello {/recipient/name}" valueLiveUpdate="true" width="60%" />
-            <FormattedText htmlText="Hello {/recipient/name}" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" />
+            <Input value="{/recipient/name}" description="Hello {/recipient/name}"
+                valueLiveUpdate="true" width="60%" />
+            <FormattedText htmlText="Hello {/recipient/name}"
+                class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" />
         </content>
     </Panel>
 </mvc:View>
