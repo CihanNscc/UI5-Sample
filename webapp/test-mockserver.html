@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-resourceroots='{
+		"sap.ui.demo.walkthrough": "./"
+	}'
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northwind OData Mock Server Test</title>
+  </head>
+  <body class="sapUiBody" id="content">
+    <div id="content">
+      <h1>Testing Northwind OData Mock Server</h1>
+      <div id="mockserver-status"></div>
+      <div id="test-results"></div>
+    </div>
+
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        // Initialize the mock server
+        sap.ui.require(
+          ["sap/ui/demo/walkthrough/localService/mockserver"],
+          function (mockserver) {
+            // Start the mock server
+            mockserver.init();
+
+            document.getElementById("mockserver-status").innerHTML =
+              '<p style="color: green;">✓ Mock Server initialized successfully!</p>';
+
+            // Test OData Model
+            sap.ui.require(
+              ["sap/ui/model/odata/v2/ODataModel"],
+              function (ODataModel) {
+                var oModel = new ODataModel(
+                  "https://services.odata.org/V2/Northwind/Northwind.svc/",
+                  {
+                    defaultCountMode: "Request",
+                  }
+                );
+
+                var sTestResults = "<h2>Available EntitySets:</h2><ul>";
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Categories\')">Categories</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Products\')">Products</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Suppliers\')">Suppliers</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Customers\')">Customers</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Orders\')">Orders</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Order_Details\')">Order_Details</a></li>';
+                sTestResults +=
+                  '<li><a href="#" onclick="testEntitySet(\'Invoices\')">Invoices</a></li>';
+                sTestResults += "</ul>";
+                sTestResults += '<div id="entity-data"></div>';
+
+                document.getElementById("test-results").innerHTML =
+                  sTestResults;
+
+                // Make global for testing
+                window.oModel = oModel;
+                window.testEntitySet = function (sEntitySet) {
+                  oModel.read("/" + sEntitySet, {
+                    success: function (oData) {
+                      var sResult = "<h3>" + sEntitySet + " Data:</h3>";
+                      sResult +=
+                        "<pre>" +
+                        JSON.stringify(oData.results.slice(0, 3), null, 2) +
+                        "</pre>";
+                      sResult +=
+                        "<p>Total records: " + oData.results.length + "</p>";
+                      document.getElementById("entity-data").innerHTML =
+                        sResult;
+                    },
+                    error: function (oError) {
+                      document.getElementById("entity-data").innerHTML =
+                        '<p style="color: red;">Error loading ' +
+                        sEntitySet +
+                        ": " +
+                        oError.message +
+                        "</p>";
+                    },
+                  });
+                };
+
+                // Auto-test Categories on load
+                setTimeout(function () {
+                  window.testEntitySet("Categories");
+                }, 1000);
+              }
+            );
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
