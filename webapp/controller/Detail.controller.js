@@ -28,7 +28,7 @@ sap.ui.define(
             window.decodeURIComponent(
               oEvent.getParameter("arguments").invoicePath
             ),
-          model: "invoice",
+          model: "invoices",
         });
       },
       onNavBack: function () {

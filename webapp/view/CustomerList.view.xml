@@ -13,8 +13,7 @@
             <List
                 id="customerList"
                 items="{path: 'northwind>/Customers'}"
-                mode="MultiSelect"
-                select="onSelectCustomer"
+                mode="SingleSelectLeft"
             >
                 <items>
                     <StandardListItem
@@ -23,6 +22,7 @@
                         info="{northwind>City}, {northwind>Country}"
                         infoState="None"
                         type="Active"
+                        press="onSelectCustomer"
                     />
                 </items>
             </List>

@@ -1,0 +1,19 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.CustomerDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page title="{i18n>customerDetailTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <ObjectHeader title="{northwind>CompanyName}" number="{northwind>CustomerID}"
+                numberUnit="ID" />
+            <ObjectAttribute title="{i18n>contactTitle}" text="{northwind>ContactTitle}" />
+            <ObjectAttribute title="{i18n>contactName}" text="{northwind>ContactName}" />
+            <ObjectAttribute title="{i18n>address}" text="{northwind>Address}" />
+            <ObjectAttribute title="{i18n>city}" text="{northwind>City}" />
+            <ObjectAttribute title="{i18n>region}" text="{northwind>Region}" />
+            <ObjectAttribute title="{i18n>postalCode}" text="{northwind>PostalCode}" />
+            <ObjectAttribute title="{i18n>country}" text="{northwind>Country}" />
+        </content>
+    </Page>
+</mvc:View> 

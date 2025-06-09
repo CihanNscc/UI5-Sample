@@ -9,10 +9,10 @@
       number="{parts: [{path: 'invoices>ExtendedPrice'}, {path: 'view>/currency'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
       numberUnit="{view>/currency}" intro="{invoices>ShipperName}" title="{invoices>ProductName}">
       <attributes>
-        <ObjectAttribute title="{i18n>quantityTitle}" text="{invoice>Quantity}"></ObjectAttribute>
+        <ObjectAttribute title="{i18n>quantityTitle}" text="{invoices>Quantity}"></ObjectAttribute>
         <ObjectAttribute title="{i18n>dateTitle}"
           text="{
-					path: 'invoice>ShippedDate',
+					path: 'invoices>ShippedDate',
 					type: 'sap.ui.model.type.Date',
 					formatOptions: {
 						style: 'long',
