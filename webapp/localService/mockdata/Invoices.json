@@ -19,7 +19,7 @@
     {
       "ProductName": "Canned Beans",
       "Quantity": 3,
-      "ExtendedPrice": 6.85,
+      "ExtendedPrice": 6.95,
       "ShipperName": "ACME",
       "ShippedDate": "2015-03-02T00:00:00",
       "Status": "B"
