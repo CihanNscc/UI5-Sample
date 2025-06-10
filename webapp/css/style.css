@@ -27,3 +27,246 @@ html[dir="rtl"] .myAppDemoWT .myCustomText {
 .myAppDemoWTProductRating .sapMRI {
   vertical-align: initial;
 }
+
+/* Customer Detail Page Styles */
+.customerDetailPage {
+  background-color: #f7f7f7;
+}
+
+.customerDetailContainer {
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Header Panel Styles */
+.customerHeaderPanel {
+  background: linear-gradient(135deg, #0070f3 0%, #0052cc 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.15);
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.customerHeaderPanel .sapMPanelHdr {
+  background: transparent !important;
+  color: white !important;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px 12px 0 0;
+}
+
+.customerHeaderPanel .sapMPanelHdrText {
+  color: white !important;
+  font-weight: 600;
+}
+
+.customerHeaderPanel .sapMPanelContent {
+  background: transparent !important;
+  padding: 1.5rem;
+}
+
+.customerObjectHeader {
+  background: transparent !important;
+  color: white !important;
+}
+
+/* ObjectHeader Title (Company Name) */
+.customerObjectHeader .sapMOHTitle,
+.customerObjectHeader .sapMOHTitle * {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ObjectHeader Number (Customer ID) */
+.customerObjectHeader .sapMOHNumber,
+.customerObjectHeader .sapMOHNumber * {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600;
+}
+
+/* ObjectHeader Number Unit */
+.customerObjectHeader .sapMOHNumberUnit,
+.customerObjectHeader .sapMOHNumberUnit * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ObjectHeader Icon */
+.customerObjectHeader .sapMOHIcon {
+  color: white !important;
+  font-size: 2rem;
+}
+
+/* All ObjectHeader text elements */
+.customerObjectHeader .sapMObjAttr,
+.customerObjectHeader .sapMObjAttr *,
+.customerObjectHeader .sapMObjAttrTitle,
+.customerObjectHeader .sapMObjAttrTitle *,
+.customerObjectHeader .sapMObjAttrText,
+.customerObjectHeader .sapMObjAttrText * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Force all text within ObjectHeader to be white */
+.customerObjectHeader span,
+.customerObjectHeader div,
+.customerObjectHeader .sapMText,
+.customerObjectHeader .sapMLabel {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Specifically target the ObjectHeader container */
+.customerHeaderPanel .sapMOH,
+.customerHeaderPanel .sapMOH *,
+.customerHeaderPanel .sapMObjectHeader,
+.customerHeaderPanel .sapMObjectHeader * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Address Panel Styles */
+.customerAddressPanel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e3e8ef;
+  margin-bottom: 1rem;
+}
+
+.customerAddressPanel .sapMPanelHdr {
+  background: #f8fafc;
+  color: #2d3748;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 12px 12px 0 0;
+}
+
+.addressContainer {
+  padding: 1.5rem;
+}
+
+.addressRow {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.addressIcon {
+  color: #4a90e2;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.addressDetails {
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.addressText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.cityText,
+.regionText,
+.postalText {
+  color: #4a5568;
+  margin-right: 0.75rem;
+  font-weight: 500;
+}
+
+.cityText::after {
+  content: ",";
+  margin-left: 0.25rem;
+}
+
+.regionText::after {
+  content: ",";
+  margin-left: 0.25rem;
+}
+
+.countryText {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Contact Panel Styles */
+.customerContactPanel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e3e8ef;
+}
+
+.customerContactPanel .sapMPanelHdr {
+  background: #f8fafc;
+  color: #2d3748;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 12px 12px 0 0;
+}
+
+.contactContainer {
+  padding: 1.5rem;
+}
+
+.contactRow {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contactIcon {
+  color: #48bb78;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.contactDetails {
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.phoneText,
+.faxText {
+  color: #2d3748;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.phoneText {
+  margin-bottom: 0.5rem;
+}
+
+/* Hover Effects */
+.customerHeaderPanel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 112, 243, 0.2);
+  transition: all 0.3s ease;
+}
+
+.customerAddressPanel:hover,
+.customerContactPanel:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .customerDetailContainer {
+    padding: 0.5rem;
+  }
+
+  .addressRow,
+  .contactRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .addressIcon,
+  .contactIcon {
+    align-self: flex-start;
+  }
+}

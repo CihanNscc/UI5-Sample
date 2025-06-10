@@ -2,18 +2,76 @@
     controllerName="sap.ui.demo.walkthrough.controller.CustomerDetail"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
 >
-    <Page title="{i18n>customerDetailTitle}" showNavButton="true" navButtonPress="onNavBack">
+    <Page title="{i18n>customerDetailTitle}" showNavButton="true" navButtonPress="onNavBack"
+        class="customerDetailPage">
         <content>
-            <ObjectHeader title="{northwind>CompanyName}" number="{northwind>CustomerID}"
-                numberUnit="ID" />
-            <ObjectAttribute title="{i18n>contactTitle}" text="{northwind>ContactTitle}" />
-            <ObjectAttribute title="{i18n>contactName}" text="{northwind>ContactName}" />
-            <ObjectAttribute title="{i18n>address}" text="{northwind>Address}" />
-            <ObjectAttribute title="{i18n>city}" text="{northwind>City}" />
-            <ObjectAttribute title="{i18n>region}" text="{northwind>Region}" />
-            <ObjectAttribute title="{i18n>postalCode}" text="{northwind>PostalCode}" />
-            <ObjectAttribute title="{i18n>country}" text="{northwind>Country}" />
+            <!-- Header Section -->
+            <VBox class="customerDetailContainer">
+                <!-- Main Header Card -->
+                <Panel class="customerHeaderPanel" headerText="{i18n>customerInfo}"
+                    expandable="false">
+                    <content>
+                        <ObjectHeader
+                            title="{northwind>CompanyName}"
+                            number="{northwind>CustomerID}"
+                            numberUnit="ID"
+                            class="customerObjectHeader"
+                            icon="sap-icon://customer"
+                            iconTooltip="Customer">
+                            <attributes>
+                                <ObjectAttribute
+                                    title="{i18n>contactTitle}"
+                                    text="{northwind>ContactTitle}"
+                                    active="false" />
+                                <ObjectAttribute
+                                    title="{i18n>contactName}"
+                                    text="{northwind>ContactName}"
+                                    active="false" />
+                            </attributes>
+                        </ObjectHeader>
+                    </content>
+                </Panel>
+
+                <!-- Address Information Card -->
+                <Panel class="customerAddressPanel" headerText="{i18n>addressInfo}"
+                    expandable="false">
+                    <content>
+                        <VBox class="addressContainer">
+                            <HBox class="addressRow">
+                                <core:Icon src="sap-icon://home" class="addressIcon" />
+                                <VBox class="addressDetails">
+                                    <Text text="{northwind>Address}" class="addressText" />
+                                    <HBox>
+                                        <Text text="{northwind>City}" class="cityText" />
+                                        <Text text="{northwind>Region}" class="regionText" />
+                                        <Text text="{northwind>PostalCode}" class="postalText" />
+                                    </HBox>
+                                    <Text text="{northwind>Country}" class="countryText" />
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </content>
+                </Panel>
+
+                <!-- Contact Information Card -->
+                <Panel class="customerContactPanel" headerText="{i18n>contactInfo}"
+                    expandable="false">
+                    <content>
+                        <VBox class="contactContainer">
+                            <HBox class="contactRow">
+                                <core:Icon src="sap-icon://phone" class="contactIcon" />
+                                <VBox class="contactDetails">
+                                    <Text text="{northwind>Phone}" class="phoneText" />
+                                    <Text text="{northwind>Fax}" class="faxText" />
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </content>
+                </Panel>
+            </VBox>
         </content>
     </Page>
 </mvc:View> 
